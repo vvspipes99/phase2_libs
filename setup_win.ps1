@@ -35,7 +35,8 @@ claim_reward_address: "$CLAIM_REWARD_ADDRESS"
 
 server:
   # don't modify this
-  cysic_endpoint: "https://api-pre.prover.xyz"
+  # cysic_endpoint: "https://api-pre.prover.xyz"
+  cysic_endpoint: "https://api-testnet.prover.xyz"
 "@
 
 # Write the content to the config.yaml file

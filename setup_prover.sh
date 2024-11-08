@@ -22,7 +22,8 @@ cat <<EOF > ~/cysic-prover/config.yaml
 # Not Change
 chain:
   # Not Change
-  endpoint: "node-pre.prover.xyz:80"
+  # endpoint: "node-pre.prover.xyz:80"
+  endpoint: "grpc-testnet.prover.xyz:80"
   # Not Change
   chain_id: "cysicmint_9001-1"
   # Not Change

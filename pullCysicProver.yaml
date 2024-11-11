@@ -1,0 +1,15 @@
+# pullCysnetProver.yml
+- name: pull cysnet
+  hosts: all
+  tasks:
+    - name: rm cysnet docker image
+      community.docker.docker_image:
+        name: 10.234.1.250:5001/timemeansalot/cysnet_phase2:v2.4
+        state: absent
+      become: yes
+
+    - name: pull cysnet docker image
+      community.docker.docker_image:
+        name: 10.234.1.250:5001/timemeansalot/cysnet_phase2:v2.4
+        source: pull
+      become: yes

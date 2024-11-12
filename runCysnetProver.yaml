@@ -1,4 +1,3 @@
-# runCysnetProver.yml
 - name: run cysnet prover
   hosts: all
   tasks:
@@ -26,6 +25,7 @@
         volumes:
           - /home/cysic/.scroll_prover/v1/:/root/.scroll_prover:ro
           - /home/cysic/.scroll_prover/:/root/cysic-prover/params_assets/scroll
+          - /home/cysic/:/root/cysic-prover/params_assets
         log_driver: syslog
         log_options:
           syslog-address: "udp://10.234.1.250:514"

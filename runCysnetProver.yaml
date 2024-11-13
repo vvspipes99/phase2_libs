@@ -7,8 +7,9 @@
         device_requests:
           - # Add nVidia GPUs to this container
             driver: nvidia
-            device_ids:
-              - "0"
+            # device_ids:
+            #   - "0"
+            count: -1 # use all GPUs
             capabilities:
               - gpu
               - compute
@@ -16,6 +17,7 @@
         name: "cysnet_prover"
         restart_policy: unless-stopped
         state: started
+        # entrypoint: /bin/bash
         env:
           CHAIN_ID: "534352"
           REWARD_ADDRESS: "{{REWARD_ADDRESS}}"

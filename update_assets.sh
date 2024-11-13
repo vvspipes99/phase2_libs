@@ -6,7 +6,6 @@
       file:
         path: ~/.scroll_prover/v1
         state: directory
-        mode: '0755'
         force: no
 
     - name: Copy params

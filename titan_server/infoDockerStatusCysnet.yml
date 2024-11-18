@@ -1,0 +1,20 @@
+- name: titan server get docker infomation
+  hosts: all
+  tasks:
+    - name: get infomation
+      docker_container_info:
+        name: "cysnet_prover"
+      register: out
+      become: yes
+
+    - name: list container state
+      debug:
+        var: out.container.State.Restarting # failed container
+
+    - name: list image version
+      debug:
+        var: out.container.Config.Image
+
+    - name: list image version
+      debug:
+        var: out.container.State.StartedAt

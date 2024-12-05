@@ -12,8 +12,15 @@ CLAIM_REWARD_ADDRESS=$1
 rm -rf ~/cysic-verifier
 cd ~
 mkdir cysic-verifier
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/verifier_mac > ~/cysic-verifier/verifier_mac
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libzkp.dylib > ~/cysic-verifier/libzkp.dylib
+if [[ $(uname -m) == "x86_64" ]]; then
+    # Intel chip
+    curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/verifier_mac_intel > ~/cysic-verifier/verifier_mac
+    curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libzkp_intel.dylib > ~/cysic-verifier/libzkp.dylib
+else
+    # M series chip
+    curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/verifier_mac_m > ~/cysic-verifier/verifier_mac
+    curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libzkp_m.dylib > ~/cysic-verifier/libzkp.dylib
+fi
 
 # 第二段命令：创建配置文件
 cat <<EOF > ~/cysic-verifier/config.yaml

@@ -12,10 +12,10 @@ CLAIM_REWARD_ADDRESS=$1
 rm -rf ~/cysic-prover2
 cd ~
 mkdir cysic-prover2
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/monitor_linux > ~/cysic-prover/prover
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libdarwin_prover.so  > ~/cysic-prover/libdarwin_prover.so
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libzkp.so  > ~/cysic-prover/libzkp.so
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libcysnet_monitor.so  > ~/cysic-prover/libcysnet_monitor.so
+curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/monitor_linux > ~/cysic-prover2/prover
+curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libdarwin_prover.so  > ~/cysic-prover2/libdarwin_prover.so
+curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libzkp.so  > ~/cysic-prover2/libzkp.so
+curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libcysnet_monitor.so  > ~/cysic-prover2/libcysnet_monitor.so
 
 # 第二段命令：创建配置文件
 cat <<EOF > ~/cysic-prover2/config.yaml
@@ -47,7 +47,7 @@ EOF
 # 第三段命令：设置执行权限并启动verifier
 cd ~/cysic-prover2/
 chmod +x ~/cysic-prover2/prover
-echo "LD_LIBRARY_PATH=. CHAIN_ID=534352 ./prover" > ~/cysic-prover2/start.sh
-chmod +x ~/cysic-prover2/start.sh
+echo "LD_LIBRARY_PATH=. CHAIN_ID=534352 ./prover" > ~/cysic-prover/start.sh
+chmod +x ~/cysic-prover/start.sh
 
 echo "Cysic prover setup is complete. Run ./start.sh to start the prover."

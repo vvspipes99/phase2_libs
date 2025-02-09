@@ -47,7 +47,7 @@ EOF
 # 第三段命令：设置执行权限并启动verifier
 cd ~/cysic-prover2/
 chmod +x ~/cysic-prover2/prover
-echo "LD_LIBRARY_PATH=. CHAIN_ID=534352 ./prover" > ~/cysic-prover/start.sh
-chmod +x ~/cysic-prover/start.sh
+echo "LD_LIBRARY_PATH=. CHAIN_ID=534352 ./prover" > ~/cysic-prover2/start.sh
+chmod +x ~/cysic-prover2/start.sh
 
 echo "Cysic prover setup is complete. Run ./start.sh to start the prover."
